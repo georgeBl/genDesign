@@ -1,11 +1,15 @@
 'use strict'
+
+
+let actStrokeCap;
+
 function setup(){
   createCanvas(600,600);
 }
 
 function draw(){
   background("grey");
-  strokeCap(SQUARE);
+  strokeCap(actStrokeCap);
   const radius = 250,
         hourThick = 40,
         secondThick = 20,
@@ -79,21 +83,24 @@ function draw(){
   ellipse(radius-70,0,30,30);
   pop();
 
-  //numbers cause why not?! probbly gonan look ugly but imagine they not there
-  // push();
-  // textSize(32);
-  // textAlign(CENTER, BOTTOM);
-  // fill("black");
-  // translate(width/2,50);
-  // text("12",0,0);
-  // pop();
+
+  let counter = 1;
+  for(let i=0; i<6*12*5;i+=6*5){
+    push();
+    strokeWeight(5);
+    translate(width/2,height/2);
+    textSize(32);
+    textAlign(CENTER,CENTER);
+    text(counter, (radius+32/2) * cos(i+270+6*5), (radius+32/2) * sin(i+270+6*5));
+    counter++;
+    pop();
+  }
+
 }
 
-
-//
-// function keyReleased(){
-//   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
-//   if (key == '1') actStrokeCap = ROUND;
-//   if (key == '2') actStrokeCap = SQUARE;
-//   if (key == '3') actStrokeCap = PROJECT;
-// }
+function keyReleased(){
+  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  if (key == '1') actStrokeCap = ROUND;
+  if (key == '2') actStrokeCap = SQUARE;
+  if (key == '3') actStrokeCap = PROJECT;
+}
