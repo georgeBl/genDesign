@@ -15,8 +15,6 @@ function draw(){
         secondThick = 20,
         thickGap = 10;
 
-
-
   //clock bg
   push();
   noStroke()
@@ -82,8 +80,6 @@ function draw(){
   ellipse(0,0,10,10);
   ellipse(radius-70,0,30,30);
   pop();
-
-
   let counter = 1;
   for(let i=0; i<6*12*5;i+=6*5){
     push();
@@ -95,7 +91,6 @@ function draw(){
     counter++;
     pop();
   }
-
 }
 
 function keyReleased(){
