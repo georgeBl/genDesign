@@ -67,8 +67,8 @@ function draw(){
   rotate(hourAngle+270);
   beginShape();
   vertex(-hourHandOffset, -hourHandStartWidth/2);
-  vertex(hourHandLength,- hourHandStartWidth/2+3);
-  vertex(hourHandLength, hourHandStartWidth/2-3);
+  vertex(hourHandLength,- hourHandStartWidth/2+hourHandsTaper/2);
+  vertex(hourHandLength, hourHandStartWidth/2-hourHandsTaper/2);
   vertex(-hourHandOffset, hourHandStartWidth/2);
   endShape();
   pop();
@@ -83,8 +83,8 @@ function draw(){
   rotate(minuteAngle+270);
   beginShape(); //i didnt use taper because it wouldnt fid on the line same values used
   vertex(-minuteHandOffset, -minuteHandStartWidth/2);
-  vertex(minuteHandLength,-minuteHandStartWidth/2+3);
-  vertex(minuteHandLength,minuteHandStartWidth/2-3);
+  vertex(minuteHandLength,-minuteHandStartWidth/2+minuteHandsTaper/2);
+  vertex(minuteHandLength,minuteHandStartWidth/2-minuteHandsTaper/2);
   vertex(-minuteHandOffset,minuteHandStartWidth/2);
   endShape();
   pop();
@@ -103,6 +103,6 @@ function draw(){
   vertex(-secondHandOffset, secondHandStartWidth/2);
   endShape();
   ellipse(0,0,15,15);
-  ellipse(secondHandLength-25/2+1giy, 0, 25, 25);
+  ellipse(secondHandLength-25/2+1, 0, 25, 25);
   pop();
 }
